@@ -14,9 +14,10 @@ var map, districtSearch, downText;
 
 $(function() {
 	map = new AMap.Map('amap', {
-		viewMode : '2D',
+		viewMode : '3D',
 		center : [ 116.397162, 39.908935 ],
 		zoom : 3,
+		mapStyle: 'amap://styles/fresh',
 		zooms : [ 3, 20 ],
 		expandZoomRange : true,
 		doubleClickZoom : false,
@@ -49,7 +50,8 @@ function clickTree(treeNode) {
 				return;
 			}
 			map.clearMap();
-			var boundaries = result.districtList[0].boundaries;
+			const index = Math.floor(Math.random()* result.districtList.length)
+			var boundaries = result.districtList[index].boundaries;
 			var maxArea = 0;
 			var polygon = null;
 			for(var i in boundaries) {

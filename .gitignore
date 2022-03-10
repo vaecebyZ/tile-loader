@@ -4,7 +4,8 @@
 /build/
 /.settings/
 /transaction-logs/
-
+/src/main/resources/offline-maps-api/amap/tiles
+/.idea/*
 .classpath
 .project
 
